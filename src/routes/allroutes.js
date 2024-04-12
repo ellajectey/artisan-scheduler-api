@@ -17,7 +17,7 @@ router.post("/add-artisan",addArtisan)
 router.post("/get-artisans",getAllArtisans)
 
 // ratings
-router.get("/add-room",addRating)
+router.get("/add-rating",addRating)
 router.get("/get-ratings",getAllRatings)
 
 // appointments
