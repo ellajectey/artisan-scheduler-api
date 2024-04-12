@@ -1,4 +1,4 @@
-import { appointmentModel } from "../model/appointment.js";
+import { appointmentModel } from "../models/appointment.js";
 import express from "express";
 
 export const addAppointment = async (req,res) => {

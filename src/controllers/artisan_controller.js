@@ -1,5 +1,5 @@
-import { artisanModel } from "../model/artisan.js";
-import express from "express";
+import { artisanModel } from "../models/artisan.js";
+
 export const addArtisan = async (req,res) => {
     try {
         const data = req.body
