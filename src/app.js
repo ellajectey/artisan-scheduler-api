@@ -6,24 +6,24 @@ import {router} from './routes/allroutes.js'
 
 
 dotenv.config();
+const port = process.env.PORT || 8080
+const mongoUri = process.env.MONGO_URI;
 
 const app =express();
 
 app.use(express.json());
 app.use(cors());
 
+// use router
 app.use(router);
 
-const mongoUri = process.env.MONGO_URI;
 
-try {
-    await mongoose.connect(mongoUri)
-} catch (error) {
+
+// connecting mongoose
+ mongoose.connect(mongoUri).then(()=>{
     console.log("database is connected")
-}
+}).catch((error) => console.log(error))
 
-
-const port = process.env.PORT || 8080
 
 app.listen(port, () =>{
 
