@@ -20,7 +20,7 @@ router.get('/users/:id', authenticateToken, getSpecificUser)
 
 // artisans
 router.post("/add-artisan",addArtisan)
-router.post("/get-artisans",getAllArtisans)
+router.get("/get-artisans",getAllArtisans)
 
 // ratings
 router.get("/add-rating",addRating)

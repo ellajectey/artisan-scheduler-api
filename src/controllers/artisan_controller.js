@@ -7,7 +7,7 @@ export const addArtisan = async (req,res) => {
         res.send(addData)
 
         console.log(data)
-        res.send("add rating")
+        res.send("add artisan")
 
     } catch (error) {
         console.log(error)
@@ -16,14 +16,20 @@ export const addArtisan = async (req,res) => {
 
 export const getAllArtisans = async (req,res) => {
     try {
-        
-        const getAllArtisans = await artisanModel.find({})
-        res.send(getAllArtisans)
+        const data = req.body
+        const getAllArtisans = await artisanModel.find({});
+    
+        console.log(data);
+        console.log(getAllArtisans);
 
-        console.log(data)
-        res.send("all artisans")
+        res.status(200).json(getAllArtisans)
+
+       
 
     } catch (error) {
         console.log(error)
+        res.status(404).json({ message: "Failed to get all users" });
+
     }
 }
+
