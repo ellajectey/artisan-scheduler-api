@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { addUser,getAllUsers,getSpecificUser,loginUser,logoutUser,updateUser } from "../controllers/user_controller.js";
-import { addArtisan,getAllArtisans } from "../controllers/artisan_controller.js";
+import { addArtisan,getAllArtisans,loginArtisan,logoutArtisan,updateArtisan } from "../controllers/artisan_controller.js";
 import { addRating,getAllRatings } from "../controllers/rating_controller.js";
 import { addAppointment,getAllAppointments } from "../controllers/appointment_controller.js";
 import { authenticateToken } from "../middlewares/auth.middleware.js";
@@ -21,6 +21,9 @@ router.get('/users/:id', authenticateToken, getSpecificUser)
 // artisans
 router.post("/add-artisan",addArtisan)
 router.get("/get-artisans",getAllArtisans)
+router.post('/login-artisan', loginArtisan)
+router.post('/logout-artisan', authenticateToken, logoutArtisan);
+router.patch('/artisan', authenticateToken, updateArtisan);
 
 // ratings
 router.get("/add-rating",addRating)

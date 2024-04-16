@@ -13,11 +13,12 @@ export async function authenticateToken(req, res, next) {
 
   if (token == null) return res.status(401).json({ message: "Access token not found" })
 
-  jwt.verify(token, secretKey, (err, user) => {
+  jwt.verify(token, secretKey, (err, user,artisan) => {
     console.log(err)
 
     if (err) return res.status(403).json({ message: "Invalid access token" })
 
+    req.artisan = artisan
     req.user = user
     req.token = token
 
