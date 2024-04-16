@@ -21,6 +21,8 @@ router.get('/users/:id', authenticateToken, getSpecificUser)
 // artisans
 router.post("/add-artisan",addArtisan)
 router.post("/get-artisans",getAllArtisans)
+router.post('/login', loginUser)
+router.post('/logout', authenticateToken, logoutUser);
 
 // ratings
 router.get("/add-rating",addRating)

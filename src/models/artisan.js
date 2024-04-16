@@ -7,7 +7,7 @@ const ArtisanSchema = new schema({
 
     firstName: {type:String, required: true},
     lastName: {type:String, required:true},
-    job: {type:String, required:true},
+    job: {type:String, default:null},
     email: {type:String, required: true},
     password: {type:String, required: true},
     phoneNumber: {type:String, default: null},
