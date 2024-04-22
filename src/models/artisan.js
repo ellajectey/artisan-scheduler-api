@@ -13,6 +13,7 @@ const ArtisanSchema = new schema({
     phoneNumber: {type:String, default: null},
     location: {type:String, default: null},
     category: {type:String, default: null},
+    summary: {type:String, default: null},
     images: {
         image1: { type: String, default: null },
         image2: { type: String, default: null },
