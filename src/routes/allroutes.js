@@ -26,9 +26,9 @@ router.post('/logout-artisan', authenticateToken, logoutArtisan);
 router.patch('/artisan', authenticateToken, updateArtisan);
 
 // ratings
-router.get("/add-rating",addRating)
+router.post("/add-rating",addRating)
 router.get("/get-ratings",getAllRatings)
 
 // appointments
-router.get("/add-appointment",addAppointment)
+router.post("/add-appointment",addAppointment)
 router.get("/get-appointments",getAllAppointments)

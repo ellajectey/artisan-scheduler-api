@@ -7,7 +7,7 @@ export const addRating = async (req,res) => {
         res.send(addData)
 
         console.log(data)
-        res.send("add rating")
+        res.json("add rating")
 
     } catch (error) {
         console.log(error)
