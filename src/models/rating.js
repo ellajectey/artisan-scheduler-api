@@ -8,6 +8,9 @@ const RatingSchema = new schema({
     image: {type:String, default: null},
     email: {type:String, required: true},
     description: {type:String, default:null},
+    artisanName: {type:String, default:null},
+    artisanJob: {type:String, default:null},
+    artisanEmail: {type:String, default:null},
     rating: { type: Number, min: 1, max: 5, required: true }
 
 
