@@ -2,6 +2,7 @@ import { userModel } from "../models/user.js"
 import { tokenModel } from "../models/token.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { artisanModel } from "../models/artisan.js";
 
 const saltRounds = 10;
 
@@ -77,15 +78,19 @@ export const updateUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         //find user with provided email
-        const loginUser = await userModel.findOne({ email: req.body.email });
+        const loginUser = req.body.type == 'client' 
+        ? await userModel.findOne({ email: req.body.email })
+        : await artisanModel.findOne({ email: req.body.email });
         //check if user exists 
         if (!loginUser) {
             return res.status(404).json({ message: "User not found" })
         }
         //compare password to hash password
+        const samePassword = req.body.password == loginUser.password ? true : false;
         const correctPassword = await bcrypt.compare(req.body.password, loginUser.password)
+        
         //check if password is correct
-        if (!correctPassword) {
+        if (!correctPassword && !samePassword) {
             return res.status(401).json({ message: "Invalid password" })
         }
         //generate access token for user
