@@ -11,9 +11,11 @@ const ArtisanSchema = new schema({
     email: {type:String, required: true},
     password: {type:String, required: true},
     phoneNumber: {type:String, default: null},
+    businessName: {type:String, default: null},
     location: {type:String, default: null},
     category: {type:String, default: null},
     summary: {type:String, default: null},
+    socialUrl: {type:String, default: null},
     images: {
         image1: { type: String, default: null },
         image2: { type: String, default: null },
