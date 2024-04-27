@@ -1,5 +1,6 @@
 import { ratingModel } from "../models/rating.js";
 import express from "express";
+
 export const addRating = async (req,res) => {
     try {
         const data = req.body
