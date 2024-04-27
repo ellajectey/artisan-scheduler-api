@@ -1,4 +1,4 @@
-import { Topratedmodel } from "../models/toprated";
+import { Topratedmodel } from "../models/toprated.js";
 
 export const addTopRated= async (req,res) => {
     try {
@@ -7,7 +7,7 @@ export const addTopRated= async (req,res) => {
         res.send(addData)
 
         console.log(data)
-        res.json("add topratedartisans")
+        res.json("add top rated artisans")
 
     } catch (error) {
         console.log(error)
